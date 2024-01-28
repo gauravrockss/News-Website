@@ -77,7 +77,12 @@ const Index = () => {
 
     return (
         <>
-            <Hero />
+            <Hero
+                img='img1.jpg'
+                title=' Driving innovation to change the world for good.'
+                subtitle='   The future of collaborating and creating the only way we
+                    know how. Together.'
+            />
             <Box my={4}>
                 <Typography
                     variant='h4'
@@ -113,7 +118,7 @@ const Index = () => {
             </Box>
 
             <Box mb={4}>
-                <Container>
+                <Container maxWidth='false'>
                     <Grid container spacing={3}>
                         <Grid item lg={4} xs={12}>
                             <Card

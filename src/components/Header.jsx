@@ -8,11 +8,21 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { NavLink } from 'react-router-dom';
 
-const pages = ['About us', 'Help', 'Contact Us'];
+const pages = [
+    {
+        name: 'About Us',
+        to: '/about',
+    },
+    { name: 'Help', to: '/help' },
+    {
+        name: 'Contact Us',
+        to: '/contact',
+    },
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
@@ -50,7 +60,16 @@ function Header() {
                         variant='h6'
                         component='div'
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-                        GG News
+                        <NavLink
+                            to={'/'}
+                            style={{
+                                my: 2,
+
+                                textDecoration: 'none',
+                                color: 'inherit',
+                            }}>
+                            GG News
+                        </NavLink>
                     </Typography>
 
                     <Box
@@ -69,7 +88,16 @@ function Header() {
                                 <MenuIcon />
                             </IconButton>
                             <Typography variant='h6' component='div'>
-                                GG News
+                                <NavLink
+                                    to={'/'}
+                                    style={{
+                                        my: 2,
+
+                                        textDecoration: 'none',
+                                        color: 'inherit',
+                                    }}>
+                                    GG News
+                                </NavLink>
                             </Typography>
                         </Box>
 
@@ -90,12 +118,10 @@ function Header() {
                             sx={{
                                 display: { xs: 'block', md: 'none' },
                             }}>
-                            {pages.map(page => (
-                                <MenuItem
-                                    key={page}
-                                    onClick={handleCloseNavMenu}>
+                            {pages.map((page, i) => (
+                                <MenuItem key={i} onClick={handleCloseNavMenu}>
                                     <Typography textAlign='center'>
-                                        {page}
+                                        {page.name}
                                     </Typography>
                                 </MenuItem>
                             ))}
@@ -108,16 +134,20 @@ function Header() {
                             display: { xs: 'none', md: 'flex' },
                         }}>
                         {pages.map(page => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{
-                                    my: 2,
-                                    color: 'white',
-                                    display: 'block',
-                                }}>
-                                {page}
-                            </Button>
+                            <Typography sx={{ mx: 1 }}>
+                                <NavLink
+                                    to={page.to}
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    style={{
+                                        my: 2,
+
+                                        textDecoration: 'none',
+                                        color: 'inherit',
+                                    }}>
+                                    {page.name}
+                                </NavLink>
+                            </Typography>
                         ))}
                     </Box>
 

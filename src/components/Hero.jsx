@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
-const Hero = () => {
+const Hero = ({ img, title, subtitle }) => {
     return (
         <div
             style={{
-                background: `url(${process.env.PUBLIC_URL}images/img1.jpg)`,
+                background: `url(${process.env.PUBLIC_URL}images/${img})`,
                 backgroundPosition: 'bottom',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
@@ -24,7 +24,7 @@ const Hero = () => {
                     variant='h2'
                     color='white'
                     sx={{ fontSize: 'clamp(3rem, 5vw, 4rem)' }}>
-                    Driving innovation to change the world for good.
+                    {title}
                 </Typography>
                 <Typography
                     color='white'
@@ -33,8 +33,7 @@ const Hero = () => {
                         fontSize: 'clamp(1rem, 5vw, 1.8rem)',
                         mt: 2,
                     }}>
-                    The future of collaborating and creating the only way we
-                    know how. Together.
+                    {subtitle}
                 </Typography>
             </Box>
         </div>

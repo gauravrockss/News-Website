@@ -15,11 +15,23 @@ const NewsCard = ({
                 <Box display='flex' flexDirection='column'>
                     <Typography fontWeight='bold'>{source}</Typography>
                     <Typography
-                        sx={{ mt: 1 }}
                         variant='body2'
-                        component={'a'}
-                        src={url}>
-                        {title}
+                        sx={{
+                            mt: 1,
+                            '&:hover': {
+                                textDecoration: 'underline',
+                            },
+                        }}>
+                        <a
+                            href={url}
+                            rel='noreferrer'
+                            style={{
+                                textDecoration: 'none',
+                                color: 'inherit',
+                            }}
+                            target='_blank'>
+                            {title}
+                        </a>
                     </Typography>
                     {description && (
                         <Typography sx={{ my: 1 }} variant='caption'>
