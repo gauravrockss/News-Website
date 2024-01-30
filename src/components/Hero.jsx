@@ -6,7 +6,7 @@ const Hero = ({ img, title, subtitle }) => {
         <div
             style={{
                 background: `url(${process.env.PUBLIC_URL}images/${img})`,
-                backgroundPosition: 'bottom',
+                backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 height: '100vh',

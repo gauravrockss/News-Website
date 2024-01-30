@@ -15,8 +15,12 @@ const Index = () => {
             />
             <Container maxWidth='false' sx={{ my: 5 }}>
                 <Paper elevation={0} style={{ padding: '20px' }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={6}>
+                    <Grid
+                        container
+                        spacing={2}
+                        display='flex'
+                        justifyContent='center'>
+                        <Grid item lg={6} xs={12}>
                             <Typography variant='h4' sx={{ mb: 3 }}>
                                 Frequently Asked Questions (FAQs)
                             </Typography>
@@ -42,10 +46,27 @@ const Index = () => {
                                 through the Contact Us page.
                             </Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12} lg={6}>
                             <Image
                                 name='help1.jpg'
                                 sx={{
+                                    height: 200,
+
+                                    borderRadius: '4px',
+                                    transition: '0.7s ease-in-out',
+                                    cursor: 'pointer',
+
+                                    '&:hover': {
+                                        transform: 'scale(1.06)',
+                                    },
+                                }}
+                            />
+                            <br />
+                            <Image
+                                name='help2.jpg'
+                                sx={{
+                                    height: 200,
+                                    ml: { md: 35, xs: 0 },
                                     borderRadius: '4px',
                                     transition: '0.7s ease-in-out',
                                     cursor: 'pointer',

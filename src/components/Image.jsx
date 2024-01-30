@@ -7,7 +7,7 @@ const Image = props => {
         <Box
             component='img'
             src={`${process.env.PUBLIC_URL}/images/${name}`}
-            sx={{ maxWidth: '100%', ...sx }}
+            sx={{ maxWidth: '100%', ...sx, objectFit: 'cover' }}
             {...rest}
         />
     );
